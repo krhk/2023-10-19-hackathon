@@ -1,0 +1,138 @@
+
+div.search-bar {
+  height: 7vh;
+  
+  margin-bottom: 10px;
+  padding-left: 1700px;
+  size: 100vw;
+  line-height: 25px;
+  background-color: #2a2438;
+  position:fixed
+  
+}
+div.navb{
+  background-color: #352f44;
+  width: 100vw;
+  position:sticky
+}
+div.navbar{
+  width: 100vw;
+  height: 7vh;
+  margin-bottom: 1px;
+}
+
+
+
+
+.container-wrapper{
+
+ position: fixed;
+ justify-content: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.search{
+ position:relative;
+ height: 80px;
+
+}
+.search .input-search {
+ background-color: white;
+ text-align: center;
+ width: 3.79vh;
+ height: 3.79vh;
+ border:0;
+ padding:15px;
+ transition: width 0.3s ease;
+}
+.btn{
+ background-color:rgb(87, 30, 220);
+ width: 7vh;
+ height:7vh;
+ position: absolute;
+ top: 0;
+ left: 0;
+ border: 0;
+ cursor: pointer;
+ transition: transform 0.3s ease;
+
+}
+.btn:focus, .input-search:focus{
+ outline: none;
+
+}
+.search.active .input-search{
+ width: 750px;
+ /*box-shadow: 12px 10px 5px 0 rgb(30, 60, 80)*/;
+}
+
+.search.active.btn{
+ transform: translateX(298px);
+ /*box-shadow: 13px 10px 5px 0 rgb(30, 60, 80)*/;
+}
+@media only screen and (max-width:750px){
+ .container-wrapper{
+   width:100%;
+ } 
+ .search.active{
+   margin-left: -50px;
+   
+ }
+ 
+}
+div.main {
+  background-image: url(https://gaudeamus.cz/getFile/case:show/id:560994/2.%20nejkr%C3%A1sn%C4%9Bj%C5%A1%C3%AD%20kampus.jpg);
+  
+}
+
+div.BackGround{
+  background-image: url(https://gaudeamus.cz/getFile/case:show/id:560994/2.%20nejkr%C3%A1sn%C4%9Bj%C5%A1%C3%AD%20kampus.jpg);
+
+}
+
+
+div.Pamatka {
+  background-color:  rgb(220,220,220, 0.7);   
+  height: 10vh;
+  margin-top: 20px;
+  margin: 20px;
+  border: 1px solid;
+  border-radius: 25px;
+}
+
+
+
+div.Pamatka p {
+  color: black;
+  margin-left: 2%;
+  font-size: 3vh;
+  font-family: "Times New Roman", Times, serif;
+  font-style: bold;
+  margin-top: 10px;
+  margin-bottom: 0px;
+ 
+}
+
+div.Pamatka button{
+  background-color:  rgb(220,220,220, 1);   
+  height: 3vh;
+  margin-top: 10px;
+  margin: 10px;
+  border: 1px solid;
+  border-radius: 25px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: bold;
+}
+
+div.Pamatka div{
+  text-align: right;
+}
+
+div.Pamatky {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 80px;
+}

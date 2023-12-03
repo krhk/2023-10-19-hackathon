@@ -1,0 +1,29 @@
+.tablel {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tablel td,
+.tablel th {
+  padding: 8px;
+  text-align: left;
+}
+
+.tablel tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tablel tbody tr:hover {
+  background-color: #ddd;
+}
+
+.tablel thead * {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}

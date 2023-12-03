@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "name": "Sasha",
+            "passw": "1234"
+        },
+        {
+            "name": "Natka",
+            "passw": "1234"
+        },
+        {
+            "name": "Jarys",
+            "passw": "1234"
+        },
+        {
+            "name": "Nik",
+            "passw": "1234"
+        },
+        {
+            "name": "clubSilverRock",
+            "passw": "1234"
+        }
+    ]
+}

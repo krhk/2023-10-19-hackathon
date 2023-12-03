@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/landing.css" asp-append-version="true" />
+    <title>Najdi Doktora👨‍⚕️</title>
+</head>
+
+<body style="margin: 0px;">
+<div class="container">
+    <div class="left-side">
+        <h1 class="main-heading">Najdi doktora👨‍⚕️</h1>
+        <h2 class="second-heading">I tvé zdraví si to zaslouží.🩺</h2>
+    </div>
+    <div class="right-side">
+        <img class="doctors-img" src="doctors.svg"/>
+            <button id="find-me" class="btn">
+                Začít
+            </button>
+    </div>
+       
+    
+</div>
+    <div id="loading-modal" class="modal-wrapper" style="display:none">
+        <div class="center-modal">
+            <h2 class="modal-header">Hledáme pro Vás lékaře</h2>
+            <div class="lds-dual-ring"></div>
+            <h3 class="modal-comment"> Nevypínejte prosím lokalizaci polohy </h3>
+        </div>
+    </div>
+</body>
+
+<script src="js/landing.js"></script>
+<script>
+    function geoFindMe() {
+        
+        
+
+        console.log("location");
+        var modal = document.getElementById("loading-modal");
+        modal.style = "display: flex;";
+        function success(position) {
+            console.log("success");
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            window.location = `/home/ProcessLocation?longt=${longitude}&latt=${latitude}`;
+            console.log(position);
+        }
+
+        function error() {
+            
+        }
+
+        if (!navigator.geolocation) {
+           
+        } else {
+            
+            navigator.geolocation.getCurrentPosition(success, error);
+        }
+    }
+
+    document.querySelector("#find-me").addEventListener("click", geoFindMe);
+
+</script>

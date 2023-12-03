@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test Chat Page</title>
+    <link rel="stylesheet" type="text/css" href="css/chat.css">
+    <link rel="stylesheet" href="css/buttonstyle.css">
+
+<style>
+    .container{
+        width: 200px;
+        height: 10px;
+        position: fixed;
+        left: -15px;
+        
+    }
+</style>
+</head>
+
+<body>
+    <div class="chat-container">
+
+        <div class="container">
+            <div class="btn" onclick="clickHome()"><a href="#" class="material-symbols-outlined">Domů</a></div>
+            
+        </div>
+        <section class="friend-list" id="friend-list">
+            <div class="friend-list-label">Seznam přátel: </div>
+            <!-- Add more friends here -->
+        </section>
+        <div class="container">
+            <div class="btn" onclick="clickHome()" style="visibility: hidden; position: absolute; width: 0px; height: 0px;"><a href="#" class="material-symbols-outlined">Domů</a></div>
+            <div class="btn" style="margin-top:65vh;" id="logout" onclick="clickLogOut()"><a href="#"
+                class="material-symbols-outlined">Odhlásit</a></div>
+        </div>
+        <div class="chat" id="chat">
+            <div class="chat-header">
+                <!-- (<%= user %>) Chat with Friend -->
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <!-- Chat messages will be displayed here -->
+
+            </div>
+
+            <form id="msg-form" method="dialog">
+                <div class="input-container">
+                    <input type="text" class="message-input" name="chatMsg" id="message"
+                        placeholder="Napište zprávu zde...">
+                    <input class="send-button" type="submit" value="Odeslat" onclick="includeHTML()">
+                </div>
+            </form>
+        </div>
+
+        <div id="toUser" style="visibility: hidden;"></div> <!-- for know which user with chat now -->
+    </div>
+
+
+    <div id="reload" include-html="chats"></div> <!-- include chat string  -->
+
+</body>
+
+<script id="data" type="application/json">
+    {
+        "user": "<%= user %>",
+        "users": "<%= users %>",
+        "chats": "<%= chats %>",
+        "frnd": "<%= frien %>",
+        "port": "<%= WSport %>"
+    }
+</script>
+
+<script type="text/javascript" src="/scripts/includeHTML.js"></script>
+<script>
+    includeHTML()
+</script>
+
+<script type="text/javascript" src="/scripts/chat.js"></script>
+<script type="text/javascript" src="/scripts/sendMsg.js"></script>
+<script type="text/javascript" src="/scripts/buttonClck.js"></script>
+
+</html>

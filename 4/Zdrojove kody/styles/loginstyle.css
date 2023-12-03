@@ -1,0 +1,98 @@
+:root {
+    --text: #060b14;
+    --background: #f3f6fb;
+    --primary: #1e3862;
+    --primary-semi-trans: rgba(30, 56, 98, 0.32);
+    --secondary: #c8d7ee;
+    --accent: #3767b3;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    color: var(--text);
+}
+
+body {
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    margin-top: 300px;
+    width: 50%;
+    padding: 10px;
+}
+
+.button {
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+    background-color: var(--accent);
+    color: white;
+    padding: 10px 15px;
+}
+
+.button:hover {
+    transform: skewX(-8deg) translateY(-4px);
+    transition: .3s;
+}
+
+.zakulaceni {
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-color: var(--secondary);
+    padding: 10px 15px;
+}
+
+/*pridat do home.css*/
+.cara-dark {
+    position: absolute;
+    background-color: var(--primary);
+    height: 100%;
+    width: 200px;
+    left: -100px;
+    top: -30px;
+    transform: rotate(10deg);
+}
+
+.cara-light {
+    position: absolute;
+    background-color: var(--secondary);
+    height: 100%;
+    width: 200px;
+    left: -80px;
+    top: -30px;
+    transform: rotate(10deg);
+}
+
+.copyright {
+    position: absolute;
+    padding-top: 7px;
+    bottom: 0px;
+    left: 0px;
+    height: 30px;
+    width: 100%;
+    background-color: var(--accent);
+    color: white;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.7rem;
+}
+
+.cd-right {
+    right: -100px;
+    top: 0px;
+    left: auto;
+}
+
+.cl-right {
+    right: -80px;
+    top: 0px;
+    left: auto;
+}

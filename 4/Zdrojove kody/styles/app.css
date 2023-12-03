@@ -1,0 +1,261 @@
+@import "global.css";
+:root{
+    --lord-icon-primary: var(--primary)
+}
+.map{
+    height: 100vh;
+    z-index: 1;
+}
+.side-menu{
+    position: absolute;
+    height: 60vh;
+    width: 70px;
+    border-radius: 35px;
+    bottom: 10px;
+    left: 10px;
+    background-color: var(--background);
+    background-size: 5vmin 5vmin;
+    z-index: 100;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    display: flex;
+}
+.side-menu-hover{
+    width: 350px;
+    border-radius: 35px 20px 20px 35px;
+    transition: 0.3s ease-in-out;
+}
+.icons{
+    height: 100%;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    gap: 10px;
+}
+.icons span{
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px;
+    user-select: none;
+    transition: 0.3s;
+    border-radius: 50%;
+    z-index: 10;
+}
+@keyframes infobtin {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes infobtout {
+    to {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    70%{
+        opacity: 0;
+    }
+    from{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+.icons span:not(.active){
+    background-color: var(--background);
+}
+.icons span[data-menuName = 'menu-info']{
+    animation: infobtin .5s forwards ease;
+    z-index: 5;
+}
+.icons span:hover{
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.absolute{
+    position: absolute;
+    bottom: 15px;
+}
+.line{
+    height: 100%;
+    position: absolute;
+    width: 1px;
+    background-color: #afafaf;
+    left: 70px;
+}
+.rest{
+    width: calc(350px - 69px);
+    height: 100%;
+    position: absolute;
+    left: 71px;
+    display: flex;
+    justify-content: center;
+}
+.active{
+    background-color: var(--primary);
+    border-radius: 50%;
+    color: white;
+    transition: .3s;
+}
+.layers{
+    padding: 17px 0;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: .5s;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+}
+.layers div{
+    width: 90%;
+}
+.layers div:first-child{
+    margin-top: 20px;
+}
+.layers div label{
+    user-select: none;
+}
+.layers div input{
+    scale: 1.25;
+    accent-color: var(--primary);
+}
+
+.layers label{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+select{
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--secondary);
+}
+.close-btn{
+    position: absolute;
+    float: right;
+    top: 10px;
+    cursor: pointer;
+    padding: 5px;
+    right: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+    display: inline;
+    height: 23.5px;
+}
+.close-btn:hover{
+    background-color: var(--primary);
+    color: white;
+    transform: rotate(90deg);
+    transition: 0.3s;
+}
+.nav{
+    padding: 17px 0;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.info{
+    padding: 17px 0;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.info .item:first-child{
+    margin-top: 20px;
+}
+.info .item{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.item .title{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.item .details{
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.loading{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: grid;
+    background-color: var(--background);
+    z-index: 1000;
+    place-items: center;
+    animation: none;
+}
+@keyframes out {
+    from{opacity: 1}
+    to{opacity: 0}
+}
+.infobox{
+    z-index: 20;
+    position: absolute;
+    top: -60px;
+    left: 40%;
+    border-radius: 5px;
+    background-color: var(--background);
+    overflow: hidden;
+    animation: none;
+}
+.infobox p{
+    text-align: center;
+    padding: 0 25px;
+}
+.loadbar{
+    height: 4px;
+    animation: none;
+    background-color: var(--primary);
+}
+@keyframes Aloadbar {
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+@keyframes Bloadbar {
+    from{
+        opacity: 0;
+        top: -40px;
+    }
+    to{
+        opacity: 1;
+        top: 10px;
+    }
+}
+@keyframes BloadbarClose {
+    from{
+    }
+    to{
+        opacity: 0;
+        top: -40px;
+    }
+}

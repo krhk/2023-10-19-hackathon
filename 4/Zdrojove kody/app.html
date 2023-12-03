@@ -1,0 +1,231 @@
+<?php
+    require_once "Backend/Stavy.php";
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/global.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.10.2/src/leaflet.geometryutil.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/app.css"/>
+    <link rel="stylesheet" href="styles/custom-leaflet.css">
+    <script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.11/pako.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pako/1.0.11/pako.js"></script>
+    <link rel="icon" type="image/x-icon" href="/content/Logo-Icon.png">
+    <script type="text/javascript" src="scripts/google.js"></script>
+
+    <script src="scripts/nav.js"></script>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>CheckMyRoute</title>
+    <style>
+        .material-symbols-rounded {
+            font-variation-settings:
+                    'FILL' 0,
+                    'wght' 400,
+                    'GRAD' 0,
+                    'opsz' 24
+        }
+    </style>
+</head>
+<body>
+<div class="infobox" id="infobox">
+    <p id="infobox-text">Toto je testovací zpráva</p>
+    <div class="loadbar" id="loadbar"></div>
+</div>
+<div class="loading" id="loading">
+    <lord-icon
+            src="https://cdn.lordicon.com/yxyampao.json"
+            trigger="loop"
+            style="width:100px;height:100px; ">
+    </lord-icon>
+</div>
+<div class="map" id="map"></div>
+<div class="side-menu" id="side-menu">
+    <div onmouseenter="OpenMenu()" class="icons" id="icons">
+        <span onclick="Select(this)" class="material-symbols-rounded active" id="menu-btn" data-menuName="menu-layers">layers</span>
+        <span onclick="Select(this)" class="material-symbols-rounded" id="menu-btn" data-menuName="menu-nav">assistant_navigation</span>
+
+        <span onclick="window.location.href = 'login.php'" class="material-symbols-rounded absolute">login</span>
+    </div>
+    <div class="line"></div>
+    <div class="rest" id="rest">
+        <span onclick="CloseMenu()" class="material-symbols-rounded absolute close-btn">close</span>
+        <div class="layers" id="menu-layers">
+            Vrstvy
+            <div>
+                <input  onclick="filterLayersAll()" type="checkbox" id="layers-vse" value="vse">
+                <label for="layers-vse">Vše</label>
+            </div>
+            <div>
+                <input  onclick="filterLayers()" type="checkbox" id="layers-vyborny" value="výborný">
+                <label for="layers-vyborny">Výborný</label>
+            </div>
+            <div>
+                <input  onclick="filterLayers()" type="checkbox" id="layers-dobry" value="dobrý">
+                <label for="layers-dobry">Dobrý</label>
+            </div>
+            <div>
+                <input  onclick="filterLayers()" type="checkbox" id="layers-vyhovujici" value="vyhovující">
+                <label for="layers-vyhovujici">Vyhovující</label>
+            </div>
+            <div>
+                <input  onclick="filterLayers()" type="checkbox" id="layers-nevyhovujici" value="nevyhovující">
+                <label for="layers-nevyhovujici">Nevyhovující</label>
+            </div>
+            <div>
+                <input  onclick="filterLayers()" type="checkbox" id="layers-havarijni" value="havarijní">
+                <label for="layers-havarijni">Havarijní</label>
+            </div>
+            <div>
+                <input  onclick="filterLayers()" type="checkbox" id="layers-superhavarijni" value="SUPERhavarijní">
+                <label for="layers-superhavarijni">SUPER-Havarijní</label>
+            </div>
+        </div>
+        <div class="nav" id="menu-nav">
+            Navigace
+            <button onclick="selectStart()">bod a</button>
+            <button onclick="selectEnd()">bod b</button>
+        </div>
+        <div class="info" id="menu-info">
+            Info
+            <div class="item">
+                <div class="title">Stav:</div>
+                <div class="details" id="info-stav_sil"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">stav_rok</div>
+                <div class="details" id="info-stav_rok"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">ozn_sil</div>
+                <div class="details" id="info-ozn_sil"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">ozn_usek</div>
+                <div class="details" id="info-ozn_usek"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">delka_usek</div>
+                <div class="details" id="info-delka_usek"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">ozn_trida</div>
+                <div class="details" id="info-ozn_trida"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">ozn_kat</div>
+                <div class="details" id="info-ozn_kat"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">typ_povrch</div>
+                <div class="details" id="info-typ_povrch"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">nazev_vusc</div>
+                <div class="details" id="info-nazev_vusc"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">dp_id</div>
+                <div class="details" id="info-dp_id"></div>
+            </div>
+
+            <div class="item">
+                <div class="title">SHAPE_Length</div>
+                <div class="details" id="info-SHAPE_Length"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="scripts/mapLogic.js"></script>
+<script>
+    document.querySelectorAll('[id*="layers-"]').forEach((x) => {
+        x.checked = true;
+    });
+    function filterLayers() {
+        var selectedConditions = [];
+        var allChecked = true;
+        document.querySelectorAll('[id*="layers-"]').forEach((x) => {
+            if(x.checked) {
+                selectedConditions.push(x.value);
+            }
+            else{
+                if(x.id !== "layers-vse"){
+                    allChecked = false;
+                }
+            }
+        });
+        if(allChecked){
+            document.getElementById("layers-vse").checked = true;
+        }
+        else{
+            document.getElementById("layers-vse").checked = false;
+        }
+        document.querySelectorAll("[data-stav]").forEach((x) => {
+            x.setAttribute("stroke-opacity", "0");
+            selectedConditions.forEach((y) => {
+                if(x.dataset.stav === y){
+                    x.setAttribute("stroke-opacity", "1");
+                }
+            }) ;
+        });
+    }
+
+    function filterLayersAll(){
+        const vseCheckbox = document.getElementById("layers-vse");
+
+        if(!vseCheckbox.checked) {
+            document.querySelectorAll('[id*="layers-"]').forEach((x) => {
+                x.checked = false;
+                document.querySelectorAll("[data-stav]").forEach((x) => {
+                    x.setAttribute("stroke-opacity", "0");
+                });
+            });
+        } else {
+            document.querySelectorAll('[id*="layers-"]').forEach((x) => {
+                x.checked = true;
+                document.querySelectorAll("[data-stav]").forEach((x) => {
+                    x.setAttribute("stroke-opacity", "1");
+                });
+            });
+        }
+
+
+    }
+
+    // Initial check for layers-vse
+    const vseCheckbox = document.getElementById("layers-vse");
+    if (!vseCheckbox.checked) {
+        filterLayersAll();
+    }
+
+    // Event listener for layers-vse checkbox
+    vseCheckbox.addEventListener('change', function() {
+        filterLayersAll();
+    });
+
+</script>
+<script src="scripts/menuController.js"></script>
+<script src="scripts/infoBox.js"></script>
+</html>
+

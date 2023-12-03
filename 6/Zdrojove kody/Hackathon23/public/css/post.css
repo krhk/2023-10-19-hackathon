@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+.postField {
+    background-color: rgba(106, 64, 96, 0.225);
+    width: 50vh;
+    height: 100vh;
+    top: 0vh;
+    margin-left: 80vh;
+    position: fixed;
+    visibility: visible;
+    box-shadow: 0 0 50px 15px #48abe0;
+}
+.postPicture{
+    background-image: none;
+    background-color: rgba(93, 89, 111, 0.6);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 77vh;
+    background-size: 85% 60vh;
+    background-position: 3.5vh 9vh;
+    /*box-shadow: 0 0 50px 15px #7048e0;*/
+}
+.postVideo{
+    width: 85%;
+    height: 60vh;
+    margin-top: 9vh;
+    margin-left: 3.6vh;
+}
+video { 
+    -webkit-transform: scaleX(1.26); 
+}
+.postPfp{   
+    margin-top: -68vh;
+    margin-left: 3.5vh;
+    width: 6vh;
+    height: 6vh;
+    background-size:cover;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+}
+.postName{
+    -webkit-user-select: none;
+    margin-top: -5vh;
+    margin-left: 13vh;
+    width: 20vh;
+    height: 4vh;
+    font-size: 3vh;
+    font-family: 'Josefin Sans', sans-serif;
+    background: -webkit-linear-gradient(#ffffff, #e681ff); /* Text color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(49, 49, 49, 0.6); /* Text shadow */
+    font-family: 'Josefin Sans', sans-serif;
+}
+.postLike{
+    -webkit-user-select: none;
+    cursor:pointer;
+    text-align: center;
+    width: 6vh;
+    height: 5vh;
+    margin-top: 64vh;
+    margin-left: 3.5vh;
+    border-radius: 100%;
+    
+}
+.postComment{
+    -webkit-user-select: none;
+    cursor:pointer;
+    text-align: center;
+    width: 6vh;
+    height: 5vh;
+    margin-top: -5vh;
+    margin-left: 11vh;
+    border-radius: 100%;
+}
+.postLikeCount{
+    -webkit-user-select: none;
+    width: 15vh;
+    height: 4vh;
+    margin-top: -3.5vh;
+    margin-left: 27vh;
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-size: x-large;
+    font-family: 'Josefin Sans', sans-serif;
+}
+/* .material-symbols-outlined{
+    width: 6vh;
+    height: 5vh;
+    font-size: 40px; 
+    padding-left: 2px;
+} */
+.hover{
+    transition: 0.5s;
+}
+.hover:hover {
+    transform: scale(1.5) rotate(-1deg);
+}
+.post1{
+    margin-top: -142vh;
+    animation: 1s infinite;
+}
+
+@keyframes slideup{
+    from{
+        margin-top: -142vh;
+    }
+    to{
+        margin-top: -219vh;
+    }
+}
+@keyframes slidedown{
+    from{
+        margin-top: -142vh;
+    }
+    to{
+        margin-top: -65vh;
+    }
+}
+
+@keyframes slideleft {
+    from{
+        margin-left: 240vh;
+        visibility: hidden;
+    }
+    /* tak aby si tim nerozbila to moje v club vecech */
+    to{
+        margin-left: 148vh;
+        visibility: visible;
+    }
+}
+
+/* .emptyPost{
+    width: 50vh;
+    height: 77vh;
+    background-color: violet;
+    position: absolute;
+    z-index: 1;
+} */

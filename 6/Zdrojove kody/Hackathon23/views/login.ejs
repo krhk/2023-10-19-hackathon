@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| CLUELESS |</title>
+    <link rel="stylesheet" href="css/login.css">
+
+    <script>
+        let url = new URL(window.location.href);
+        url.searchParams.delete('username');
+        url.searchParams.delete('password');
+        history.replaceState(history.state, '', url.href);
+    </script>
+
+</head>
+
+<body class="club-background">
+    <div class="container">
+        <h2 class="club-heading">
+            <%= page %>
+        </h2>
+        <form>
+            <div class="form-group">
+                <label for="username" class="club-label">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="club-label">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <% if(tryL> 1) { %>
+                <div class="wrong">
+                    <% if(msG == '') { %>
+                        Wrong username or password.
+                        <br>
+                        Try Sign up if you do not have account
+                    <% } %>
+                </div>
+            <% } %>
+            <% if(msG != '' & msG != 'username: undefined is not possible, try another one') { %>
+                <div class="wrong"><%= msG %></div>
+            <% } %>
+            <% if(page=='Login' ){ %>
+                <button type="submit" class="club-button">Log in</button>
+            <% } %>
+            <% if(page=='Registration' ){ %>
+                <button type="submit" class="club-button">Sign up</button>
+             <% } %>
+        </form>
+        <% if(page=='Login' ){ %>
+            <a href="/registration"><button class="registr">Sign up</button></a>
+        <% } %>
+        <% if(page=='Registration' ){ %>
+            <a href="/login"><button class="club-button back">Back</button></a>
+        <% } %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+mini:
+    "nazev"
+    "nazev_obce"
+
+velky:
+    "nazec"
+    "popis"
+
+    adresa:
+        "nazev_obce"
+        "nazev_ulice"
+        "cislo_domovni"
+        "psc"
+    web:
+        "www"
+    "telefon"

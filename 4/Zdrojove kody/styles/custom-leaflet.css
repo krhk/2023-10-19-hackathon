@@ -1,0 +1,49 @@
+.leaflet-routing-container{
+    display: none;
+}
+/*.leaflet-marker-icon, .leaflet-shadow-pane{
+    opacity: 0;
+}*/
+.popupCustom,
+.popupCustom .leaflet-popup-content-wrapper {
+    background: white;
+    color: black;
+    font-size: 0.4rem;
+}
+.customPopupText{
+    font-size: 1rem;
+}
+.leaflet-popup-close-button {
+    display: none;
+}
+.leaflet-popup-content{
+    margin: 5px 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+.leaflet-popup-content-wrapper{
+    border-radius: 5px;
+}
+.leaflet-popup-tip{
+    border-radius: 0 0 2px 0;
+}
+html body .leaflet-control-container .leaflet-top .leaflet-control-zoom{
+    border: none;
+
+}
+html body .leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-in{
+    border-radius: 50% 50% 0 0;
+    width: 35px;
+    padding: 5px;transition: .3s ease;
+}
+html body .leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-out{
+    border-radius: 0 0 50% 50%;
+    width: 35px;
+    padding: 5px;transition: .3s ease;
+}
+html body .leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-out:hover,
+html body .leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-in:hover{
+    background-color: var(--primary);
+    color: white;
+    transition: .3s ease;
+}

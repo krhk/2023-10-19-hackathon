@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Hackathon - KHK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://api.mapy.cz/loader.js"></script>
+    <link rel="shortcut icon" href="icons/manifest-icon-512.png" />
+	<script>Loader.load()</script>
+	<script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Montserrat:wght@300&family=Noto+Sans:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body onload="getLocation2();">
+    <img src="datashort-logo-khk2.png" style="width: 450px;max-width: calc(100vw - 20px);margin: 0 auto;display: block;">
+    <br><br>
+    
+    <div class="mapy">
+        <a href="#" onclick="overlay('kultura');" class="button"><div class="aa">Kultura</div></a>
+        <a href="#" onclick="overlay('priroda');" class="button"><div class="aa">Přírodní památky</div></a>
+        <a href="#" onclick="overlay('doprava');" class="button"><div class="aa">Doprava</div></a>
+        <a href="#" onclick="overlay('izs');" class="button"><div class="aa">IZS</div></a>
+        <a href="#" onclick="overlay('pamatky');" class="button"><div class="aa">Památky</div></a>
+        <a href="#" onclick="overlay2('infocentra');" class="button"><div class="aa">Infocentra</div></a>
+        <br>
+        <a href="#" onclick="getweather();" class="button"><div class="aa">Počasí</div></a>
+    </div>
+    <div class="kategorie" id="kultura" style="display: none">
+        
+        <div class="mapy">
+        <h1>Kultura</h1>
+        <a href="#" onclick="overlay2('muzea_a_galerie');" class="button"><div class="aa">Muzea a galerie</div></a>
+        <a href="#" onclick="overlay2('kulturni_domy');" class="button"><div class="aa">Kulturní domy</div></a>
+        <a href="#" onclick="overlay2('knihovny');" class="button"><div class="aa">Knihovny</div></a>
+        <a href="#" onclick="overlay2('divadla_a_filharmonie');" class="button"><div class="aa">Divadla a filharmonie</div></a>
+        <a href="#" onclick="overlay2('zabavni_centra');" class="button"><div class="aa">Zábavní centra</div></a>
+        <a href="#" onclick="overlay2('kluby');" class="button"><div class="aa">Kluby</div></a>
+        <a href="#" onclick="overlay2('kina');" class="button"><div class="aa">Kina</div></a>
+        <br><br></div>
+    </div>
+    <div class="kategorie" id="priroda" style="display: none">
+        
+        <div class="mapy">
+        <h1>Přírodní památky</h1>
+        <a href="#" onclick="overlay2('prirodni_zajimavosti');" class="button"><div class="aa">Přírodní zajímavosti</div></a>
+        <a href="#" onclick="overlay2('rozhledny_a_vyhlidky');" class="button"><div class="aa">Rozhledny a vyhlídky</div></a>
+        <br><br></div>
+    </div>
+    <div class="kategorie" id="doprava" style="display: none">
+        
+        <div class="mapy">
+        <h2>Navigace na nejbližší:</h2>
+        <a href="#" onclick="getpoint('BUS');" class="button"><div class="aa">Bus</div></a>
+        <a href="#" onclick="getpoint('VLAK');" class="button"><div class="aa">Vlak</div></a>
+        <a href="#" onclick="getpoint('LANOVKY');" class="button"><div class="aa">Lanovku</div></a>
+        <br><br></div>
+    </div>
+    <div class="kategorie" id="izs" style="display: none">
+        
+        <div class="mapy">
+        <h1>IZS</h1>
+        <a href="#" onclick="overlay2('pohotovost');" class="button"><div class="aa">Pohotovost</div></a>
+        <a href="#" onclick="overlay2('stanice_hasici');" class="button"><div class="aa">Stanice hasičů</div></a>
+        <a href="#" onclick="overlay2('sluzebny_policie');" class="button"><div class="aa">Služebny policie</div></a>
+        <br><br></div>
+    </div>
+    <div class="kategorie" id="pamatky" style="display: none">
+        
+        <div class="mapy">
+        <h1>Památky</h1>
+        <a href="#" onclick="overlay2('hrady');" class="button"><div class="aa">Hrady</div></a>
+        <a href="#" onclick="overlay2('architektonicke_pamatky');" class="button"><div class="aa">Architektonické památky</div></a>
+        <a href="#" onclick="overlay2('zamky');" class="button"><div class="aa">Zámky</div></a>
+        <a href="#" onclick="overlay2('pevnosti_a_opevneni');" class="button"><div class="aa">Pevnosti a opevnění</div></a>
+        <a href="#" onclick="overlay2('narodni_kulturni_pamatky');" class="button"><div class="aa">Národní kulturní památky</div></a>
+        <a href="#" onclick="overlay2('technicke_pamatky');" class="button"><div class="aa">Technické památky</div></a>
+        <a href="#" onclick="overlay2('cirkevni_pamatky');" class="button"><div class="aa">Církevní památky</div></a>
+        <a href="#" onclick="overlay2('zidovske_pamatky');" class="button"><div class="aa">Židovské památky</div></a>
+        <br><br></div>
+    </div>
+    <div class="doprava" id="doprava-druh" style="display: none">
+        
+        <div class="mapy">
+        <h1>Doprava</h1>
+        <div id="m" style="height: 350px"></div>
+        <br><br></div>
+    </div>
+    <div class="pocasi" id="pocasi" style="display: none">
+        
+        <div class="mapy">
+        <h1>Počasí</h1>
+        <table class="pocasiTab">
+            <tr>
+               <td></td>
+                <td>Aktuální</td>
+                <td>Za 1 hodinu</td>
+                <td>Za 2 hodiny</td>
+            </tr>
+            <tbody></tbody>
+        </table>
+        <br><br></div>
+    </div>
+    <div class="data" id="table" style="display: none">
+        
+        <div class="mapy">
+        <h1>Informační centra</h1>
+        <table class="data-table">
+           <thead>
+            <tr>
+                <td>Název</td>
+                <td>Web</td>
+                <td>x</td>
+                <td>y</td>
+            </tr>
+           </thead>
+           <tbody>
+               
+           </tbody>
+        </table>
+        </div>
+    </div>
+    <script>
+        function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    console.log("Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+}
+        getLocation();
+    
+        
+        function overlay(nazev) {
+        var overlay = document.createElement('div');
+
+        var content = '';    
+
+          overlay.style.position = 'fixed';
+          overlay.style.top = '0';
+          overlay.style.left = '0';
+          overlay.style.width = '100%';
+          overlay.style.height = '100%';
+          overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+          overlay.style.zIndex = '9999';
+
+          var text = document.createElement('p');
+          text.innerHTML = document.getElementById(nazev).innerHTML;
+          text.style.textAlign = 'center';
+          text.style.fontSize = '24px';
+          text.style.marginTop = '100px';
+
+          var closeBtn = document.createElement('span');
+          closeBtn.textContent = '×';
+          closeBtn.style.position = 'fixed';
+          closeBtn.style.top = '20px';
+          closeBtn.style.right = '20px';
+          closeBtn.style.fontSize = '34px';
+          closeBtn.style.cursor = 'pointer';
+
+          function hideOverlay() {
+            document.body.removeChild(overlay);
+          }
+
+          closeBtn.addEventListener('click', hideOverlay);
+
+          overlay.appendChild(text);
+          overlay.appendChild(closeBtn);
+          document.body.appendChild(overlay);
+        }
+
+    </script>
+    
+   <script src="table.js"></script>
+   <script src="script.js"></script>
+    
+</body>
+</html>

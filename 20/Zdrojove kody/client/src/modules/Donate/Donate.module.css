@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  font-size: 2.25rem;
+  font-weight: 400;
+  padding-bottom: 0.25rem;
+}
+
+.wrapper {
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.12rem;
+}
+
+.confirmButton {
+  margin-top: 2.12rem;
+}
+
+@media (max-width: 1080px) {
+  .wrapper {
+    width: 100%;
+  }
+}

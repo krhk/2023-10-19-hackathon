@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <| CLUELESS |>
+    </title>
+    <link rel="icon" href="ico/clueless.ico">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+    <link rel="stylesheet" href="css/comments.css">
+    <link rel="stylesheet" href="css/feed.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/other.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/club.css">
+    <link rel="stylesheet" href="css/buttonstyle.css">
+    <link rel="stylesheet" href="css/friendsNear.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/traficClub.css">
+    <link rel="stylesheet" href="css/events.css">
+    <style>
+        /* Style the button */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+        /* Style the hidden form */
+        #hidden-form {
+            display: none;
+            position: fixed;
+            margin-bottom: 6vh;
+            width: 100px;
+            top: 525px;
+            left: 70px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 2.5vh;
+        }
+
+        #hidden-form input {
+            width: 20vh;
+            padding: 10px;
+            margin-left: -3vh;
+            margin-top: 1vh;
+            border-radius: 10px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 2vh;
+        }
+
+        #hidden-form button {
+            background-color: #ff00d9;
+            box-shadow: 0 0 15px 5px #ff54e57e;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 15vh;
+            margin-left: 1.5vh;
+            margin-top: 1.5vh;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 2vh;
+        }
+    </style>
+
+</head>
+
+<!-- <video autoplay muted loop id="bgvid">
+    <source src="backGround/backG.mp4" type="video/mp4">
+</video> -->
+
+<body>
+
+    <div class="dontDelete" style="width: 100px; height: 100px; opacity: 0; position: absolute; visibility: hidden;">Its
+        for visibility of background!!!
+    </div>
+
+    <section class="menu">
+        
+        <div class="container m_menu">
+            <div class="btn" onclick="clickHome()"><a href="#" class="material-symbols-outlined">home</a></div>
+            <div class="btn" onclick="clickSearch()"><a href="#" class="material-symbols-outlined">search</a></div>
+            <div class="btn" onclick="clickMsg()"><a href="#" class="material-symbols-outlined">mail</a></div> 
+            <% if(user.includes('club')) { %> 
+                <div class="btn" id="toggle-button" onclick="addEvent()"><a href="#"
+                        class="material-symbols-outlined">event</a></div>
+                <%}%>
+                    <div class="btn" id="logout" onclick="clickLogOut()"><a href="#"
+                            class="material-symbols-outlined">logout</a></div>
+        </div>
+
+        <form id="hidden-form" action="/dopr" method="post">
+            <input type="text" name="name" placeholder="Název">
+            <input type="text" name="date" placeholder="Datum">
+            <input type="text" name="place" placeholder="Místo">
+            <input type="text" name="time" placeholder="Čas">
+            <input type="text" name="linky" placeholder="linky" value = "690290;710210;690231" style="visibility: hidden; width: 0px; height: 0px; position: fixed;">
+            <button type="submit" onclick="hide()">Poslat akci</button>
+        </form>
+        <script>
+            const toggleButton = document.getElementById('toggle-button');
+            const hiddenForm = document.getElementById('hidden-form');
+
+            toggleButton.addEventListener('click', function () {
+                if (hiddenForm.style.display === 'none') {
+                    hiddenForm.style.display = 'block';
+                } else {
+                    hiddenForm.style.display = 'none';
+                }
+            });
+            function hide(){
+                hiddenForm.style.display = 'none';
+            }
+        </script>
+    </section>
+
+
+    <!--<section class="mainFeed" id="reviews">
+            <div class="reviews" id="reviews">
+                <div class="pfp">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                        </span>
+                </div>
+            </div>
+        </section>*/-->
+
+
+    <p class="friendLabel" id="friendLbl">Lokace přátel: </p>
+    <section class="mainFeed mainFriendDiv" id="friendDiv">
+        <div class="friendDiv">
+            <div class="friendPfp" style="background-image: url('/xxpfp/1.jpg');">
+                <div class="friendWhereIco"></div>
+            </div>
+            <div class="friendName">Franta</div>
+            <div class="friendLocation"><i>Denoche</i></div>
+        </div>
+        <div class="friendDiv">
+            <div class="friendPfp" style="background-image: url('/xxpfp/3.jpg');">
+                <div class="friendWhereIco" style="background-color: orange;"></div>
+            </div>
+            <div class="friendName">Václav</div>
+            <div class="friendLocation"><i>U Stolu</i></div>
+        </div>
+        <div class="friendDiv">
+            <div class="friendPfp" style="background-image: url('/xxpfp/2.jpg');">
+                <div class="friendWhereIco" style="background-color: red;"></div>
+            </div>
+            <div class="friendName">Hana</div>
+            <div class="friendLocation"><i>Doma</i></div>
+        </div>
+    </section>
+
+    <p class="clubLabel" id="clubLbl">Kapacita klubu:</p>
+    <section class="mainFeed mainFriendDiv traficClubMainDiv" id="clubDiv">
+        <div class="friendDiv traficClubDiv">
+            <div class="traficClubPfp" style="background-image: url('/pfpCluby/9.jpg');"></div>
+            <div class="traficClubName">Denoche</div>
+            <div class="traficClubBar"
+                style="background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(255,165,0,1) 25%, rgba(255,0,0,1) 50%);">
+                <div class="traficClubPacicka" style="margin-left: 14vh;"></div>
+            </div>
+        </div>
+        <div class="friendDiv traficClubDiv">
+            <div class="traficClubPfp" style="background-image: url('/pfpCluby/4.jpg');"></div>
+            <div class="traficClubName">U Stolu</div>
+            <div class="traficClubBar"
+                style="background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(255,165,0,1) 25%, rgba(255,165,0,1) 75%, rgba(255,0,0,1) 100%);">
+                <div class="traficClubPacicka" style="margin-left: 8vh;"></div>
+            </div>
+        </div>
+        <div class="friendDiv traficClubDiv">
+            <div class="traficClubPfp" style="background-image: url('/pfpCluby/1.jpg');"></div>
+            <div class="traficClubName">Na Výstavišti</div>
+            <div class="traficClubBar"
+                style="background: linear-gradient(90deg, rgba(0,128,0,1) 0%, rgba(255,165,0,1) 75%, rgba(255,0,0,1) 100%);">
+                <div class="traficClubPacicka" style="margin-left: 2vh;"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="postField" id="postField">
+        <div class="post1 postPicture " id="div1">
+            <video class="postVideo" muted src="" type="video/mp4"></video>
+            <div class="postPfp"></div>
+            <div class="postName"></div>
+            <div class="postLike">
+                <span class="material-symbols-outlined hover" style="visibility: hidden; ">favorite</span>
+            </div>
+
+            <div class="postLikeCount"></div>
+        </div>
+        <div class="postPicture " id="div2">
+            <video class="postVideo" muted src="" type="video/mp4"></video>
+            <div class="postPfp"></div>
+            <div class="postName"></div>
+            <div class="postLike">
+                <span class="material-symbols-outlined hover" style="visibility: hidden;">favorite</span>
+            </div>
+
+            <div class="postLikeCount"></div>
+        </div>
+
+        <div class="postPicture " id="div3">
+            <video class="postVideo" muted autoplay loop preload="none" src="" type="video/mp4"></video>
+            <div class="postPfp"></div>
+            <div class="postName"></div>
+            <div class="postLike">
+                <span class="material-symbols-outlined hover">favorite</span>
+            </div>
+
+            <div class="postLikeCount"></div>
+        </div>
+
+        <div class="postPicture " id="div4">
+            <video class="postVideo" muted src="" type="video/mp4"></video>
+            <div class="postPfp"></div>
+            <div class="postName"></div>
+            <div class="postLike">
+                <span class="material-symbols-outlined hover">favorite</span>
+            </div>
+
+            <div class="postLikeCount"></div>
+        </div>
+
+        <div class="postPicture " id="div5">
+            <video class="postVideo" muted src="" type="video/mp4"></video>
+            <div class="postPfp"></div>
+            <div class="postName"></div>
+            <div class="postLike">
+                <span class="material-symbols-outlined hover">favorite</span>
+            </div>
+
+            <div class="postLikeCount"></div>
+        </div>
+
+    </section>
+
+    <section class="postField searchSection" id="searchSection">
+        <input class="clubSearchBar" placeholder="Vyhledej..." id="searchInput"></input>
+        <div class="searchButton material-symbols-outlined hover" id="clubSearch">search</div>
+        <div id="results">
+            <p class="searchTitle">⭐ Doporučené ⭐</p>
+            <button class="clubSearchDiv" onclick="openClub(9)">
+                <div class="pfp ext" style="background-image: url('/pfpCluby/9.jpg');"></div>
+                <div class="information">Denoche</div>
+                <div class="information italic">Hradec Králové</div>
+            </button>
+            <button class="clubSearchDiv" onclick="openClub(4)">
+                <div class="pfp ext" style="background-image: url('/pfpCluby/4.jpg');"></div>
+                <div class="information">U Stolu</div>
+                <div class="information italic">Hradec Králové</div>
+            </button>
+            <button class="clubSearchDiv" onclick="openClub(1)">
+                <div class="pfp ext" style="background-image: url('/pfpCluby/1.jpg');"></div>
+                <div class="information">Na Výstavišti</div>
+                <div class="information">Hradec Králové</div>
+            </button>
+
+        </div>
+    </section>
+
+    <section class="clubSection" id="clubSection">
+        <button class="clubBackButton" onclick="backToSearch()">Zpět</button>
+        <div class="clubMain">
+            <div class="clubPfp" id="clubpfp"></div>
+            <div class="clubName" id="clubname">Název klubu</div>
+            <div class="clubFollowers" id="clubFollow">50 tisíc sledujících</div>
+
+
+            <button class="clubFollow" id="clubWeb" onclick="webopen()">Web</button>
+            <button class="clubTicket">Koupit lístek</button>
+            <div class="clubMezeraShit"></div>
+            <div class="clubPost" id="clubPost1"></div>
+            <div class="clubPost" id="clubPost2" style="margin-left: 38.8vh;"></div>
+            <div class="clubPost" id="clubPost3" style="margin-left: 90vh;"></div>
+        </div>
+    </section>
+
+
+    <!-- <section class="mainFeed" id="comments">
+            <div class="comments">
+                <div class="pfp">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                        </span>
+                </div>
+            </div>
+        </section> -->
+
+    <section class="mainFeed" id="calendar">
+        <div class="month">
+            <ul>
+                <li>
+                    Říjen<br>
+                    <span style="font-size:18px">2023</span>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="weekdays">
+            <li>Po</li>
+            <li>Út</li>
+            <li>St</li>
+            <li>Čt</li>
+            <li>Pá</li>
+            <li>So</li>
+            <li>Ne</li>
+        </ul>
+
+        <ul class="days">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li><span class="active">21</span></li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li><span class="active">25</span></li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li><span class="active">29</span></li>
+            <li>30</li>
+            <li><span class="active">31</span></li>
+        </ul>
+
+        <div class="events">
+            <div class="event"><i><b>21.10.2023</b></i> | Majáles - Hradec Králové</div>
+            <div class="event"><i><b>20.10.2023</b></i> | Viktor Sheen - Trutnov UFO</div>
+            <div class="event"><i><b>29.10.2023</b></i> | Calin - Náchod Denoche</div>
+            <div class="event"><i><b>31.10.2023</b></i> | Maturitní ples - Hradec Králové</div>
+        </div>
+
+    </section>
+</body>
+<script id="data" type="application/json">
+    {
+        "postName": "<%= postName.img %>",
+        "postPfp": "<%= postName.pfp %>",
+        "users": "<%= users %>",
+        "postVideo": "<%= postName.video %>",
+        "user": "<%= user %>"
+    }
+</script>
+
+<script type="text/javascript" src="/scripts/newPost.js"></script>
+<script type="text/javascript" src="/scripts/buttonClck.js"></script>
+<script type="text/javascript" src="/scripts/search.js"></script>
+<script type="text/javascript" src="/scripts/club.js"></script>
+<script type="text/javascript" src="/scripts/animationBro.js"></script>
+
+<script type="text/javascript" src="/scripts/searchDB.js"></script>
+
+
+</html>

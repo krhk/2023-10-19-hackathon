@@ -1,0 +1,24 @@
+{
+  "name": "hhk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start1": "node index1.js",
+    "start2": "node index2.js",
+    "startWebLis": "node webListener.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "jquery": "^3.7.1",
+    "parseurl": "^1.3.3",
+    "ws": "^8.14.2"
+  }
+}

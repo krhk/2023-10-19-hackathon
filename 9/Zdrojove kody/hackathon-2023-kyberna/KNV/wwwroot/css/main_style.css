@@ -1,0 +1,64 @@
+﻿@font-face{
+    font-family: Outfit;
+    src: url("../fonts/outfit.ttf");
+}
+
+* {
+    font-family: Outfit;
+}
+
+#hlavicka {
+    background-color: #adad71; /*#adad71*/
+}
+
+#logo_knv{
+    padding-top: 30px;
+}
+
+#property-nazev{
+    padding-top:30px;
+}
+
+#pamatky {
+    display: grid;
+    grid-template-areas: "button1 button2 button3"
+        "button4 button5 button5";
+    grid-gap: 5px;
+}
+
+#pamatky:nth-child(1) {
+    grid-area: button1;
+}
+
+#randomRandom {
+    padding-bottom: 100px;
+}
+
+.buttonClass {
+    background-color: #e4e4e4;
+
+    color: black;
+
+    width: 350px;
+    height: 50px;
+    margin-bottom: 40px;
+    border-radius: 7px;
+    font-size: 20px;
+    border: 0px;
+    transition: 0.2s;
+}
+
+.buttonClass:hover {
+    color: #393939;
+    width: 380px;
+    height: 55px;
+
+    font-weight: bold;
+
+    margin-bottom: 35px;
+}
+
+#oprojektu {
+    padding-top: 30px;
+    margin-bottom: 120px;
+}

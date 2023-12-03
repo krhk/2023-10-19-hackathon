@@ -1,0 +1,110 @@
+.cities {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.cities td,
+.cities th {
+  padding: 8px;
+  text-align: left;
+}
+
+.cities tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.cities tbody tr:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+.cities thead * {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+/* #Tabulka {
+  background-color: #d9d9d9;
+  height: 70vh;
+  width: 80vw;
+  margin-top: 15vh;
+  margin-left: 10vw;
+  border: black solid 2px;
+  border-radius: 15px;
+  overflow-y: scroll;
+}
+
+.radek {
+  background-color: #d9d9d9;
+  height: 50px;
+  width: 100%;
+  display: flex;
+}
+
+.radek:hover {
+  background: #00000020;
+  cursor: pointer;
+}
+
+.radek-flex {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+}
+
+.kolecko {
+  height: 15px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: black;
+  align-self: center;
+  position: relative;
+  right: 10px;
+}
+
+.zelena {
+  background: green;
+}
+
+.cervena {
+  background: red;
+}
+
+.znak {
+  height: 40px;
+  position: relative;
+  left: 10px;
+  padding: 5px;
+}
+
+.h3holder {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  text-align: left;
+}
+
+.h3holder h3 {
+  margin: 0;
+}
+
+.empty {
+  background-color: transparent;
+}
+
+.curve-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.color-switch {
+  background-color: #f5f5f5;
+}
+ */

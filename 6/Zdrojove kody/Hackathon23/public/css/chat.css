@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-image: url('../backGround/giphy3.gif');
+    background-size: 100% 100%;
+    /* animation: discoBackground 10s infinite;
+    background-color: #0c0c0c;  */
+}
+
+@keyframes discoBackground {
+    0% { background-position: 50% 0%; }
+    10% { background-position: 50% 70%; }
+    25% { background-position: 50% 100%; }
+    75% { background-position: 100% 50%; }
+    90% { background-position: 50% 70%; }
+    100% { background-position: 50% 0%; }
+}
+
+.chat-container {
+    display: flex;
+    width: 100%;
+}
+
+.friend-list {
+    width: 20vh; 
+    background-color: rgba(0, 0, 0, 0.464); 
+    list-style: none;
+    overflow-y: auto;
+    font-family: 'Josefin Sans', sans-serif;
+    color:white;
+    padding-top: 15vh;
+}
+
+.friend-list-label {
+    text-align: center;
+    color:white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow */
+}
+
+.friend {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: center;
+    width: 15vh;
+    cursor: pointer;
+    background-color:rgba(255, 192, 203, 0.512);
+    margin-top: 2vh;
+    margin-left:2.5vh;
+    border-radius:20px;
+    box-shadow: 0 5px 5px 0px #00000032;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow */
+    transition: 250ms;
+}
+
+.friend:hover {
+    transform: translateY(1vh);
+}
+
+.chat {
+    flex: 3;
+    background-color: #2196f3 0.8; 
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat-header {
+    background-color: #1976d24d; 
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.chat-messages {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.message {
+    margin: 50px;
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+    position: relative;
+}
+
+.sender {
+    padding: 10px;
+    position: absolute;
+    right: 0px;
+    border-radius: 7px;
+    width: fit-content;
+    background-color: rgb(209, 84, 255);
+    box-shadow: 0 0 15px 5px #d154ff7e;
+    border: groove #d154ff7e;
+    font-size: 3vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow */
+}
+
+.receiver {
+    padding: 10px;
+    position: absolute;
+    left: 0px;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: #ff92ed;
+    font-size: 3vh;
+    box-shadow: 0 0 15px 5px #ff98e0c0;
+    border: groove #ff98e0c0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow */
+
+}
+
+.message-content {
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: 70%;
+}
+
+.emoji-picker {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.input-container {
+    border-top: 1px solid #000000;
+    padding: 10px;
+    display: flex;
+}
+
+.message-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Josefin Sans', sans-serif;
+    width: 10vh;
+}
+
+.send-button {
+    background-color: #612374;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    box-shadow: 0 0 50px 15px #ff51d38d;
+
+}
+.left-menu {
+    width: 30vh; 
+    background-color: rgba(106, 64, 96, 0.225);
+    box-shadow: 0 0 50px 15px #ff51d38d;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: solid;
+}
+
+.menu-button {
+    background-color: #ff9800; 
+    border: none;
+    color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 100%;
+    outline: none;
+    transition: 0.3s;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.home{
+    top: 0px;
+}
+
+.logout{
+    margin-top: 20vh;  
+}
+
+.menu-button:hover {
+    background-color: #ff5722;
+    transition: 0.3s;
+}

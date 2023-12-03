@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  font-family: Inika;
+  background-color: #FEFCFB;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*Index navbar*/
+
+.navBar{
+  height: 10vh;
+  width: 100vw;
+  padding: 1vh 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.LogoW{
+  height: 100%;
+  width: 20%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.LogoImg{
+  height: 80%;
+  margin-left: 2vw;
+}
+
+.PagesW{
+  height: 100%;
+  width: 80%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.PageButton{
+  font-family: 'Inika';font-size: 24px;
+  color: #0A1128;
+  text-decoration: none;
+}
+
+/*Landing Page (Home)*/
+
+.HomeBox1{
+  display: flex;
+  flex-direction: row;
+  height: 88vh;
+  width: 100vw;
+}
+
+.HomeW1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 100%
+}
+
+.LandingTitle{
+  font-size: 80px;
+  color: #034078;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.LandingTitle > strong{
+  color: #0A1128;
+}
+
+.LandingUnderTitle{
+  font-size: 40px;
+  color: #0A1128;
+  max-width: 80%;
+  text-align: center;
+  margin: 0;
+}
+
+.LandingUnderTitle > strong{
+  color: #034078;
+}
+
+.HomeW2{
+  display: flex;
+  width: 60%;
+}
+
+.LandingPageImage{
+  width: 60vw;
+  height: 88vh;
+}
+
+/*Parking Page*/
+
+.ParkingBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ParkingTitle{
+  Font-size: 40px;
+}
+
+.dataDiv{
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+/*Guide Page*/
+
+.HoverName{
+  width: 200px;
+  text-align: center;
+}
+
+.GuideBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.GuideTitle{
+  Font-size: 40px;
+}
+
+.CategoryCheckboxesW{
+  margin-top: 55px;
+  height: 50px;
+}
+
+.CategoryCheckbox{
+  border-radius: 8px;
+  color: #0A1128;
+  font-size: 18px;
+  padding:10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.CategoryCheckbox:hover{
+  color: #3f3f40;
+}
+
+.CategoryCheckbox > input{
+  accent-color: #0A1128;
+}
+
+#Kluby{
+  background-color: #14aad0;
+}
+
+#Hrady{
+  background-color: #989595;
+}
+
+
+#Zamky{
+  background-color: #cdc1c1;
+}
+
+#Kina{
+  background-color: #6b8ea4;
+}
+
+
+#Rozhledny{
+  background-color: #90d285;
+}
+
+#MuzeaAgalerie{
+  background-color: #a188cb;
+}
+
+#DivadlaAfilharmonie{
+  background-color: #9c7e5f;
+}
+
+[data-text]::after {
+  content: attr(data-text);
+}

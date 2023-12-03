@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script type="module" src="./js/mapa.js" defer></script>
+    <script type="module" src="./js/filtrace.js" defer></script>
+    <link href="./css/output.css" rel="stylesheet" />
+    <script type="module" src="./js/data.js"></script>
+  </head>
+  <body>
+    <div class="overflow-hidden w-full h-screen flex items-center">
+      <div id="map" class="w-full h-screen z-0"></div>
+
+      <section
+        id="vysledek"
+        class="h-[85%] flex flex-col w-[30%] absolute top-1/2 -translate-y-1/2 left-[5%] z-10 bg-white rounded-2xl shadow-lg shadow-slate-500 p-3"
+      >
+        <div
+          class="flex items-center justify-between relative top-0 left-0 mb-4"
+        >
+          <ul class="flex items-center absolute top-0 left-0">
+            <li class="mx-2"><button id="skoly">Školy</button></li>
+            <li class="mx-2"><button id="intry">Intry</button></li>
+          </ul>
+        </div>
+        <article class="flex flex-col mt-4">
+          <h1>Název:</h1>
+        </article>
+        <div id="vypis"></div>
+      </section>
+    </div>
+  </body>
+</html>

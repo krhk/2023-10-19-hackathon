@@ -1,0 +1,87 @@
+/*import { useState } from "react";
+import "./App.css";
+import { useData } from "./components/data/data";
+
+
+function App() {
+  const { data, setData } = useState([useData()]);
+  const x = useData();
+
+
+ //načtení api dat
+
+
+  return (
+    <div className="main">
+      <div className = "header">
+      <header className="App-header">
+
+        
+        
+
+      <button
+            onClick={() => {
+              console.log("Before");
+              console.log(x);
+              console.log("After");
+            }}
+          >
+            Fetch Data
+          </button>
+
+          <main />
+        </header>
+        
+      </div>
+      <div className='search-bar'>
+        <button >🔎︎ </button>
+        <input type='text' placeholder='Search'/>
+      </div>
+      <li >
+        {data.map((data) => (
+          <li key={data.nazev}>{data.nazev}</li>
+        ))}
+        
+      </li>
+      <img src='uhk.png' alt='uhk'/>
+    </div>
+  );
+}
+
+export default App;*/
+import React, { useState } from "react";
+import "./App.css";
+import { useData } from "./components/data/data";
+
+function App() {
+  const [data, setData] = useState([]); // Inicializace stavu data jako prázdného pole
+  const x = useData(); // Volání useData() pro x
+
+  // Funkce pro načtení API dat
+  const fetchData = async () => {
+    const apiData = await x; // Předpokládejme, že x je Promise
+    setData(apiData); // Nastavení dat do stavu
+  };
+
+  return (
+    <div className="main">
+      <div className="header">
+        <header className="App-header">
+          
+        </header>
+      </div>
+      <div className="search-bar">
+        <button>🔎︎</button>
+        <input type="text" placeholder="Search" />
+      </div>
+      
+      <img src="uhk.png" alt="uhk" />
+      <button onClick={fetchData}>Fetch Data</button>
+          {data.map((item) => (
+            <li key={item.nazev}>{item.nazev}</li>
+          ))}
+    </div>
+  );
+}
+
+export default App;

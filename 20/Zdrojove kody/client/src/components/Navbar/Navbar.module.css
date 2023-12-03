@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    height: 4.6875rem;
+    width: 100%;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4.5rem;
+}
+
+.logoContainer {
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.donateButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}

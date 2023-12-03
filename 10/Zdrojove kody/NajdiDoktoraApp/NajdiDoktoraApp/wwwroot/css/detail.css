@@ -1,0 +1,148 @@
+﻿html {
+    font-size: 14px;
+    font-family: 'InterReal';
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fakeNavbar {
+    background-color: #496bf1;
+    height: 4rem;
+    color: #FFFFFF;
+    margin: 0 0 0 0;
+    text-indent: 2rem;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    font-family: 'InterReal', serif;
+    width: 100%;
+}
+
+.main-view {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-heading {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-heading h2 {
+    font-size: 52px;
+}
+
+.parts {
+    display: flex;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.left-side {
+    margin-left: 30px;
+    flex: 1;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-height: 800px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item i {
+    margin-right: 15px;
+    background-color: #496bf1;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    height: 24px;
+}
+
+.right-side {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 30px;
+    flex: 1;
+    width: 300px;
+    height: 300px;
+    background-color: #496bf1;
+}
+
+.reviews {
+    margin-top: 40px;
+    width: 70%; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 26px;
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.review {
+    height: 400px;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #496bf1;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+.review-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px 0 15px;
+    justify-content: center;
+}
+
+.review-content h3 {
+    font-size: 24px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1;
+}
+
+.review-content p {
+    font-size: 18px;
+    text-align: center;
+    width: 200px;
+    flex: 3;
+    align-items: flex-start;
+    display: flex;
+}
+
+@font-face {
+    font-family: InterReal;
+    src: url("../font/Inter-Bold.ttf");
+}
+
+.overrideBody {
+    margin: 0 0 0 0;
+}

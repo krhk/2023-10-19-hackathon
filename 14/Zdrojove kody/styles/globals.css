@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * {
+    @apply !scroll-smooth;
+  }
+
+  .container {
+    @apply max-w-screen-xl px-4 mx-auto bg-transparent;
+  }
+
+  .primary {
+    @apply bg-rose-500;
+  }
+
+  .secondary {
+    @apply bg-rose-600;
+  }
+
+  .navbtn {
+    @apply font-semibold px-6 py-2;
+  }
+
+  .normalbtn {
+    @apply font-semibold rounded-lg border-2 py-3 px-8
+     border-rose-500 text-rose-500
+     hover:bg-rose-500 hover:text-zinc-50 duration-150;
+  }
+
+  .normalbtn2 {
+    @apply font-semibold rounded-lg py-3 px-8
+     bg-rose-500 text-zinc-50
+     hover:bg-rose-600 hover:text-zinc-100 duration-150 shadow-lg;
+  }
+
+  .footername {
+    @apply font-semibold text-xl;
+  }
+
+  .footeritem {
+    @apply text-lg hover:underline;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-[2px];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-rose-700;
+  }
+
+  .howitworkstext {
+    @apply my-1;
+  }
+
+  .h3text {
+    @apply font-semibold text-2xl pt-8;
+  }
+}

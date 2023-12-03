@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+.clubBackButton{
+    width: 7vh;
+    height: 5vh;
+    cursor: pointer;
+    margin-top: 1.5vh;
+    margin-left: 2vh;
+    -webkit-user-select: none;
+    position: absolute;
+    color: #e033ff;
+    font-size: 10pt;
+    border-radius: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+.clubSection{
+    background-color: rgba(85, 79, 106, 0.6);
+    display: none;
+    width: 77%;
+    height: 95vh;
+    margin:auto;    
+    border-radius: 10px;
+}
+.clubMain{
+    width: 75%;
+    height: 100%;
+    margin: auto;
+}
+.clubPfp{
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 17vh;
+    height: 17vh;
+    border-radius: 100%;
+    background-color: rgb(215, 215, 215);
+    margin-left: -10vh;
+    position: absolute;
+    margin-top: 10vh;
+    border:outset rgb(201, 72, 224);
+    box-shadow: 0 0 50px 15px rgb(201, 72, 224);
+}
+.clubName{
+    -webkit-user-select: none;
+    margin-left: 15vh;
+    position: absolute;
+    margin-top: 12vh;
+    font-size: 4vh;
+    background: -webkit-linear-gradient(#ae00ff, #ff33c2); /* Text color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow */
+    font-family: 'Josefin Sans', sans-serif;
+    transition: 250ms;
+}
+.clubName::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    border-radius: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #ff33c2;
+    box-shadow: 0 0 15px 5px #ff33c2;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.clubName:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.clubFollowers{
+    font-size:3vh;
+    -webkit-user-select: none;
+    font-family: 'Josefin Sans', sans-serif;
+    background: white;
+    font-weight: bold;  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 15vh;
+    position: absolute;
+    margin-top: 20vh;
+}
+.clubSearchDiv{
+    width: 40vh; 
+    height: 15vh; 
+    background-color: rgba(219, 142, 247, 0.396); 
+    border-radius: 15px;
+    margin-top: 6vh; 
+    margin-left: 5vh;
+    cursor: pointer;
+    border: groove #ff98e063;
+    box-shadow: 0 0 15px 5px #ff98e0c0;
+    transition: 300ms;
+}
+.clubSearchDiv:hover {
+    transform: translateY(2vh);
+}
+.ext {
+    height: 9vh;
+    width: 9vh;
+    margin-top:-1.2vh;
+    margin-left: 1vh;
+    position:absolute;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.information {
+    -webkit-user-select: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2vh;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    color: white;
+    margin-left: 10vh;
+    margin-top: 1vh;
+}
+.searchTitle {
+    -webkit-user-select: none;
+    margin-left: 13vh; 
+    margin-top: 5vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.7vh;
+    text-shadow: 2px 2px 4px rgba(255, 119, 230, 0.6);
+}
+.clubSearchBar{
+    -webkit-user-select: none;
+    width: 30vh;
+    height: 5vh; 
+    border-radius: 30px; 
+    margin-top: 5vh;
+    margin-left: 5vh;
+    color: #000000;
+    font-size: 2vh;
+    border-radius: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 2vh;
+}
+
+.clubFollow{
+    cursor: pointer;
+    -webkit-user-select: none;
+    width: 20vh;
+    height: 5vh; 
+    margin-left: -8vh; 
+    position: absolute;
+    margin-top: 32vh;
+    color: #e033ff;
+    font-size: 10pt;
+    border-radius: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+.clubTicket{
+    cursor: pointer;
+    -webkit-user-select: none;
+    width: 20vh; 
+    height: 5vh; 
+    margin-left: 17vh;
+    position: absolute;
+    margin-top: 32vh;
+    color: #72009c;
+    font-size: 10pt;
+    border-radius: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+.clubLink{
+    -webkit-user-select: none;
+    position: absolute;
+    margin-left: 45vh;
+    margin-top: 51vh;
+    width: 40vh;
+    height: 3vh;
+    background-color: aqua;
+}
+.clubMezeraShit{
+    margin-left: -20vh;
+    width: 160vh; 
+    height: .5vh; 
+    background-color: grey;
+    position: absolute;
+    margin-top: 45vh;
+}
+.clubDescription{
+    -webkit-user-select: none;
+    position: absolute;
+    margin-left: 45vh;
+    margin-top: 51vh;
+    width: 40vh;
+    height: 3vh;
+    background-color: aqua;   
+}
+.clubPost{
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 20%;
+    height: 45vh;
+    background-color: #000000;
+    margin-top: 50vh;
+    margin-left: -12vh;
+}

@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 100%;
+}
+
+.numberInputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.38rem;
+  padding-top: 1rem;
+}
+
+.donationTypeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.38rem;
+  background-color: white;
+  height: 7.5rem;
+}
+
+.line {
+    width: 100%;
+}

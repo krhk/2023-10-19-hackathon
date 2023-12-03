@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+.mainFriendDiv{
+    height: 38vh;
+    width: 30vh;
+    margin-left: 40vh;
+    margin-top: 7vh;
+}
+.friendDiv{
+    background-color: rgba(200, 0, 255, 0.327);
+    width: 90%;
+    height: 10vh;
+    margin-top: 2vh;
+    margin-left: 1.5vh;
+    border-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.friendPfp{
+    width: 8vh;
+    height: 8vh;
+    border-radius: 100%;
+    margin-left: 1.5vh;
+    margin-top: 1vh;
+    position: absolute;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.friendName{
+    margin-left: 11vh;
+    position: absolute;
+    margin-top: 2vh;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: white;
+    -webkit-user-select: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow */
+    transition: 250ms;
+    font-size: 2.4vh;
+}
+.friendName::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    border-radius: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #ff33c2;
+    box-shadow: 0 0 15px 5px #ff33c2;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.friendName:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.friendLocation{
+    font-size:2.2vh;
+    width: 13vh;
+    height: 3vh;
+    margin-left: 11vh;
+    position: absolute;
+    margin-top: 5.4vh;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.friendWhereIco{
+    width: 2.5vh;
+    height: 2.5vh;
+    background-color: rgb(0, 255, 34);
+    border-radius: 100%;
+    margin-left: 5vh;
+    margin-top: -.5vh;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.595);
+}
+.friendLabel{
+    position: absolute;
+    margin-left: 45vh;
+    font-size: 2.5vh;
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Text shadow */
+}

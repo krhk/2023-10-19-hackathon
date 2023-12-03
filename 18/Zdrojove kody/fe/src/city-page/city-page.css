@@ -1,0 +1,20 @@
+.voteArrow {
+  color: #00000020;
+  cursor: pointer;
+}
+
+.voteArrow:hover {
+  color: #000000;
+}
+
+.emojiMarkLayer {
+  filter: opacity(20%);
+}
+
+.emojiMarkLayer:hover {
+  filter: opacity(70%);
+}
+
+.emojiMarkLayerActive {
+  filter: opacity(100%);
+}

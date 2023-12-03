@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Domovská stránka";
+}
+
+<div class="text-center">
+    <div id="logo_knv">
+        <h1 class="display-4">Vítejte na KNV</h1>
+        <h6 class="display-7">Kam na výlet?</h6>
+    </div>
+
+    <div id="tlacitka" style="margin-top:100px;">
+
+        <div id="randomRandom">
+            <form asp-action="Random">
+                <button id="actionButton" class="buttonClass">Náhodné místo</button>
+            </form>
+        </div>
+
+        <div id="pamatky" class="buttonClass, buttonList">
+
+            <form asp-action="Tech">
+                <button id="actionButton" class="buttonClass">Technická památka</button>
+            </form>
+
+            <form asp-action="Monument" id="monument">
+                <button id="actionButton" class="buttonClass">Přírodní zajímavost</button>
+            </form>
+
+            <form asp-action="Castle" id="castle">
+                <button id="actionButton" class="buttonClass">Zámek</button>
+            </form>
+
+            <form asp-action="Cultural" id="cultural">
+                <button id="actionButton" class="buttonClass">Kulturní památka</button>
+            </form>
+
+            <form asp-action="MuseumAndGallery" id="museum">
+                <button id="actionButton" class="buttonClass">Muzeum nebo galerie</button>
+            </form>
+
+            <form asp-action="Lookouts" id="lookout">
+                <button id="actionButton" class="buttonClass">Rozhledna nebo Vyhlídka</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

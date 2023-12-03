@@ -1,0 +1,38 @@
+.numberInputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.donationTypeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.38rem;
+  background-color: white;
+  height: 7.5rem;
+  border-radius: 1.1875rem; 
+}
+
+.headerContainer {
+   padding: 0.25rem; 
+}
+
+.line {
+  width: 100%;
+}
+
+.header {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.radioGroup {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-around;
+    padding: 0.25rem;
+}

@@ -1,0 +1,75 @@
+.traficClubMainDiv{
+    margin-top: 60vh;
+    height: 35vh;
+}
+.traficClubDiv{
+    height: 9vh;
+}
+.traficClubPfp{
+    width: 5vh;
+    height: 5vh;
+    background-color: blue;
+    border-radius: 100%;
+    margin-top: 2vh;
+    position: absolute;
+    margin-left: .8vh;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.traficClubName{
+    position: absolute;
+    margin-left: 7vh;
+    margin-top: 1vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: white;
+    -webkit-user-select: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow */
+    transition: 250ms;
+    font-size:2.3vh;
+}
+.traficClubName::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    border-radius: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #ff33c2;
+    box-shadow: 0 0 15px 5px #ff33c2;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.traficClubName:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.traficClubBar{
+    width: 18vh;
+    height: 1vh;
+    position: absolute;
+    margin-left: 7vh;
+    margin-top: 5vh;
+    border-radius: 10px;
+}
+.clubLabel{
+    position: absolute;
+    margin-left: 45vh;
+    width: 30vh;
+    height: 7.5vh;
+    font-size: 2.5vh;
+    margin-top: 55vh;
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Text shadow */
+}
+.traficClubPacicka{
+    width: .5vh;
+    height: 2vh;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: -.5vh;
+}

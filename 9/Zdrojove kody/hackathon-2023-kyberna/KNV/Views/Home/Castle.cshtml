@@ -1,0 +1,75 @@
+﻿@model Castles
+
+@{
+    ViewData["Title"] = "Random castle";
+}
+
+<div class="text-center">
+    @{
+        Random r = new();
+        var m = Model.Features[r.Next(0, Model.Features.Count())];
+    }
+
+    <!-- ZÁKLADNÍ INFORMACE -->
+
+    <h1 id="property-nazev">@m.Properties.Nazev</h1>
+    <br />
+
+    <h3>Základní informace:</h3>
+    @if (m.Properties.Popis != null)
+    {
+        <p>Popis: @m.Properties.Popis</p>
+    }
+
+    <p>Kraj: @m.Properties.Nazev_Vusc</p>
+    <br />
+
+
+    <!-- GEOGRAFICKÉ ÚDAJE -->
+    @if (m.Properties.Nazev_Okresu != null && m.Properties.Nazev_Obce != null && m.Properties.Psc != null)
+    {
+        <h3>Geografické informace:</h3>
+    }
+
+    @if (m.Properties.Nazev_Okresu != null)
+    {
+        @if (m.Properties.Nazev_Okresu != "#N/A")
+        {
+            <p>Okres: @m.Properties.Nazev_Okresu</p>
+        }
+    }
+
+    @if (m.Properties.Nazev_Obce != null)
+    {
+        <p>Obec: @m.Properties.Nazev_Obce</p>
+    }
+
+    @if (m.Properties.Psc != null)
+    {
+        <p>PSC: @m.Properties.Psc</p>
+    }
+
+
+    <!-- KONTAKTNÍ ÚDAJE -->
+    @if (m.Properties.Www != null)
+    {
+        <h3>Kontaktní údaje:</h3>
+    }
+    
+
+    @if (m.Properties.Www != null)
+    {
+        <p>Web: <a target="_blank" href="@m.Properties.Www">@m.Properties.Nazev</a></p>
+    }
+
+    
+    <br />
+
+    <!-- MAPA -->
+
+    <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZNeA-V1nOgtnAMgQyPBCRKZ_zP5C80Rw&q=@m.Properties.Nazev"
+            width="1300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+</div>
+
